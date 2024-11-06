@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RegisterBooksComponent } from './pages/register-books/register-books.component';
-import { ConsultBooksComponent } from './pages/consult-books/consult-books.component';
 
 const routes: Routes = [
-  { path: 'register-books', component: RegisterBooksComponent },
-  { path: 'consult-books', component: ConsultBooksComponent },
+  {
+    path: 'register-books',
+    loadChildren: () => import('./pages/register-books/register-books.module').then(m => m.RegisterBooksModule)
+  },
+  {
+    path: 'consult-books',
+    loadChildren: () => import('./pages/consult-books/consult-books.module').then(m => m.ConsultBooksModule)
+  },
   { path: '', redirectTo: '/register-books', pathMatch: 'full' },
 ];
 
