@@ -1,27 +1,40 @@
 # BookApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
+Este projeto foi desenvolvido em angular na versão 14.2.1 [Angular CLI](https://github.com/angular/angular-cli).
 
-## Development server
+Um aplicativo simples desenvolvido em Angular para cadastro e consulta de livros, com funcionalidades de validação de formulário, integração com API (ou mock) e uso de hooks de Git para garantir boas práticas de commit.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tecnologias Utilizadas
 
-## Code scaffolding
+- **Angular**: Framework para construção de aplicações web.
+- **Angular Material**: Biblioteca de componentes UI para melhorar a interface do usuário.
+- **RxJS**: Biblioteca para programação reativa.
+- **ESLint**: Ferramenta para garantir a qualidade do código.
+- **Commitlint**: Ferramenta para garantir convenções de commit (seguindo padrão Conventional Commits).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Funcionalidades
 
-## Build
+- **Cadastro de livros**: Adiciona livros com título, autor e data de publicação.
+- **Consulta de livros**: Exibe uma lista de livros cadastrados, com informações sobre título, autor e data de publicação.
+- **Validação de formulário**: Verifica se todos os campos são preenchidos antes de cadastrar um livro.
+- **Mensagens de erro**: Utiliza o `MatSnackBar` do Angular Material para exibir mensagens de erro ou sucesso.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Como Rodar o Projeto
 
-## Running unit tests
+1. Clone o repositório:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   ```bash
+   git clone https://github.com/usuario/book-app.git
+   cd book-app
+   npm install
+   ng serve
 
-## Running end-to-end tests
+Padrões de Commit
+Este projeto utiliza o Conventional Commits para padronizar a nomenclatura dos commits. Exemplo:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+feat: adiciona nova funcionalidade
+fix: corrige erro
+chore: atualiza dependências
+docs: atualiza documentação
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
