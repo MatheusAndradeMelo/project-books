@@ -4,6 +4,8 @@ Este projeto foi desenvolvido em angular na versão 14.2.1 [Angular CLI](https:/
 
 Um aplicativo simples desenvolvido em Angular para cadastro e consulta de livros, com funcionalidades de validação de formulário, integração com API (ou mock) e uso de hooks de Git para garantir boas práticas de commit.
 
+link vercel do site : https://project-books-imxagn9b3-matheusandrademelos-projects.vercel.app/register-books
+
 ## Tecnologias Utilizadas
 
 - **Angular**: Framework para construção de aplicações web.
