@@ -27,17 +27,16 @@ export class ConsultBooksComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Carrega os livros mockados ao invés de fazer uma chamada ao serviço
-    this.books$ = of(this.booksMocks).pipe(
+    // Observa a lista de livros do serviço, utilizando o mock como fallback em caso de erro
+    this.books$ = this.bookService.getBooks().pipe(
       catchError((error) => {
-        // Em caso de erro, exibe mensagem e retorna o mock de livros
         this.errorMessage = error.message;
         this.snackBar.open(
           'Erro ao carregar livros. Exibindo lista mock.',
           'Fechar',
           { duration: 3000 }
         );
-        return of(this.booksMocks);
+        return of(this.bookService.booksMocks); // Retorna os mocks caso ocorra erro
       })
     );
   }

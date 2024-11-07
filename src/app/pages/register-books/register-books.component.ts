@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { IBook } from 'src/app/models/book';
+import { BookService } from 'src/app/services/book.service';
 
 @Component({
   selector: 'app-register-books',
@@ -10,7 +13,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class RegisterBooksComponent implements OnInit {
   bookForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private snackBar: MatSnackBar) {}
+  constructor(private fb: FormBuilder, 
+    private snackBar: MatSnackBar, 
+    private bookService: BookService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.bookForm = this.fb.group({
@@ -20,27 +27,23 @@ export class RegisterBooksComponent implements OnInit {
     });
   }
 
-  // Método para lidar com o envio do formulário
   onSubmit(): void {
     if (this.bookForm.valid) {
-      console.log('Livro cadastrado:', this.bookForm.value);
-      // alert(`Livro ${this.bookForm.value.title} cadastrado com sucesso!`);
-      this.snackBar.open(
-        `Livro ${this.bookForm.value.title} cadastrado com sucesso!`,
-        'Fechar',
-        { duration: 5000 },
-      );
+      const newBook: IBook = this.bookForm.value;
+      this.bookService.addBook(newBook);
 
-      // Reseta ou recarrega o formulário após o cadastro
-      window.location.reload();
-      // this.bookForm.reset();
-    } else {
-      // alert('Por favor, preencha todos os campos.');
       this.snackBar.open(
-        'Por favor, preencha todos os campos.',
+        `Livro ${newBook.title} cadastrado com sucesso!`,
         'Fechar',
-        { duration: 5000 },
+        { duration: 5000 }
       );
+      this.bookForm.reset();
+      this.router.navigate(['/consult-books']);
+    } else {
+      this.snackBar.open('Por favor, preencha todos os campos.', 'Fechar', {
+        duration: 5000,
+      });
     }
   }
 }
+
