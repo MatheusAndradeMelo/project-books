@@ -1,17 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
+import { IBook } from '../models/book';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BookService {
-  private apiUrl = 'https://restful-booker.herokuapp.com';
+  private apiUrl = 'https://restful-booker.herokuapp.com/';
 
   constructor(private http: HttpClient) {}
 
-  getBooks(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/books`).pipe(
+  getBooks(): Observable<IBook[]> {
+    return this.http.get<IBook[]>(`${this.apiUrl}/books`).pipe(
       catchError(error => {
         // Se ocorrer um erro ao retornar os livros
         console.error('Erro ao retornar os livros:', error);

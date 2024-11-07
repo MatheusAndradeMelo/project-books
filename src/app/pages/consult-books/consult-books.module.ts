@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ConsultBooksRoutingModule } from './consult-books-routing.module';
 import { ConsultBooksComponent } from './consult-books.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -10,6 +11,7 @@ import { ConsultBooksComponent } from './consult-books.component';
   ],
   imports: [
     CommonModule,
+    MatSnackBarModule,
     ConsultBooksRoutingModule
   ]
 })

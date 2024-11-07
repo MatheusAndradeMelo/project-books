@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BookService } from '../../services/book.service';
 import { catchError, firstValueFrom, Observable } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { IBook } from 'src/app/models/book';
 
 @Component({
   selector: 'app-consult-books',
@@ -9,8 +10,16 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./consult-books.component.scss'],
 })
 export class ConsultBooksComponent implements OnInit {
-  books$!: Observable<any[]>;
+  books$!: Observable<IBook[]>;
   errorMessage: string = '';
+
+  // booksMocks = [
+  //   { title: 'Livro 1', author: 'Autor 1', publishDate: '2022-01-01' },
+  //   { title: 'Livro 2', author: 'Autor 2', publishDate: '2021-12-10' },
+  //   { title: 'Livro 3', author: 'Autor 3', publishDate: '2021-12-10' },
+  //   { title: 'Livro 4', author: 'Autor 4', publishDate: '2021-12-10' },
+  //   { title: 'Livro 5', author: 'Autor 5', publishDate: '2021-12-10' },
+  // ];
 
   constructor(
     private bookService: BookService,

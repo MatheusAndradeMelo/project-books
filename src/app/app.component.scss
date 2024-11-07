@@ -1,0 +1,77 @@
+$primary-color: #0aa664;
+$secondary-color: #ffffff;
+$hover-color: #9de7ba;
+$active-color: #e3b28c;
+$text-color: #333;
+$font-family: 'Roboto', sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+  background-color: #f4f4f9;
+  color: $text-color;
+}
+
+main {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+header {
+  background-color: $primary-color;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  li {
+    margin: 0 20px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $secondary-color;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s, transform 0.3s;
+
+    &:hover {
+      color: $hover-color;
+      transform: translateY(-2px);
+    }
+
+    &.active {
+      color: $active-color;
+      font-weight: 600;
+      border-bottom: 2px solid $active-color;
+    }
+  }
+}
+
+router-outlet {
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  li {
+    margin: 10px 0;
+  }
+}

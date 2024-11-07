@@ -18,8 +18,8 @@ import { ConsultBooksModule } from './pages/consult-books/consult-books.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    RegisterBooksModule,
     ConsultBooksModule,
+    RegisterBooksModule,
     RouterModule
   ],
   providers: [],
