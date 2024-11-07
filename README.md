@@ -32,9 +32,9 @@ Um aplicativo simples desenvolvido em Angular para cadastro e consulta de livros
 Padrões de Commit
 Este projeto utiliza o Conventional Commits para padronizar a nomenclatura dos commits. Exemplo:
 
-feat: adiciona nova funcionalidade
-fix: corrige erro
-chore: atualiza dependências
+feat: adiciona nova funcionalidade, 
+fix: corrige erro, 
+chore: atualiza dependências, 
 docs: atualiza documentação
 
 
