@@ -12,7 +12,7 @@ export class BookService {
   constructor(private http: HttpClient) {}
 
   getBooks(): Observable<IBook[]> {
-    return this.http.get<IBook[]>(`${this.apiUrl}/books`).pipe(
+    return this.http.get<IBook[]>(`${this.apiUrl}`).pipe(
       catchError(error => {
         // Se ocorrer um erro ao retornar os livros
         console.error('Erro ao retornar os livros:', error);

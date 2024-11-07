@@ -37,7 +37,7 @@ export class ConsultBooksComponent implements OnInit {
           'Fechar',
           { duration: 3000 }
         );
-        return of(this.booksMocks); // Retorna o mock em caso de erro
+        return of(this.booksMocks);
       })
     );
   }

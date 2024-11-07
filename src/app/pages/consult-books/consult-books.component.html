@@ -4,7 +4,7 @@
     <ul>
       <li *ngFor="let book of books$ | async">
         <strong>{{ book.title }}</strong> - {{ book.author }} ({{
-          book.publishDate
+          book.publishDate | date
         }})
       </li>
     </ul>
