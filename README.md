@@ -12,7 +12,7 @@ link vercel do site : https://project-books-imxagn9b3-matheusandrademelos-projec
 - **Angular Material**: Biblioteca de componentes UI para melhorar a interface do usuário.
 - **RxJS**: Biblioteca para programação reativa.
 - **ESLint**: Ferramenta para garantir a qualidade do código.
-- - **Responsividade**: site feito com design responsivo.
+-  **Responsividade**: site feito com design responsivo.
 - **Commitlint**: Ferramenta para garantir convenções de commit (seguindo padrão Conventional Commits).
 
 ## Funcionalidades
