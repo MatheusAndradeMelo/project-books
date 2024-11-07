@@ -1,38 +1,6 @@
 <main>
   <section>
     <h2>Cadastro de Livros</h2>
-    <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
-      <mat-form-field>
-        <mat-label>Título</mat-label>
-        <input matInput type="text" formControlName="title" required />
-        <mat-error *ngIf="bookForm.get('title')?.hasError('required')">
-          O título é obrigatório
-        </mat-error>
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>Autor</mat-label>
-        <input matInput type="text" formControlName="author" required />
-        <mat-error *ngIf="bookForm.get('author')?.hasError('required')">
-          O autor é obrigatório
-        </mat-error>
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>Data de Publicação</mat-label>
-        <input matInput type="date" formControlName="publishDate" required />
-        <mat-error *ngIf="bookForm.get('publishDate')?.hasError('required')">
-          A data de publicação é obrigatória
-        </mat-error>
-      </mat-form-field>
-
-      <button
-        mat-raised-button
-        color="primary"
-        type="submit"
-      >
-        Cadastrar
-      </button>
-    </form>
+    <app-book-form [bookForm]="bookForm" (formSubmit)="onSubmit()"></app-book-form>
   </section>
 </main>

@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterBooksModule } from './pages/register-books/register-books.module';
 import { ConsultBooksModule } from './pages/consult-books/consult-books.module';
+import { BookFormComponent } from './components/book-form/book-form.component';
 
 @NgModule({
   declarations: [

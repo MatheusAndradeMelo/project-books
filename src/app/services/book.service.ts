@@ -7,7 +7,7 @@ import { IBook } from '../models/book';
   providedIn: 'root'
 })
 export class BookService {
-  private apiUrl = 'https://restful-booker.herokuapp.com/';
+  private apiUrl = 'https://restful-booker.herokuapp.com/booking';
 
   constructor(private http: HttpClient) {}
 
