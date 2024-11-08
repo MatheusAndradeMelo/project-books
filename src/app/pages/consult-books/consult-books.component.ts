@@ -13,21 +13,12 @@ export class ConsultBooksComponent implements OnInit {
   books$!: Observable<IBook[]>;
   errorMessage: string = '';
 
-  booksMocks = [
-    { title: 'Livro 1', author: 'Autor 1', publishDate: '2022-01-01' },
-    { title: 'Livro 2', author: 'Autor 2', publishDate: '2021-12-10' },
-    { title: 'Livro 3', author: 'Autor 3', publishDate: '2021-12-10' },
-    { title: 'Livro 4', author: 'Autor 4', publishDate: '2021-12-10' },
-    { title: 'Livro 5', author: 'Autor 5', publishDate: '2021-12-10' },
-  ];
-
   constructor(
     private bookService: BookService,
     private snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
-    // Observa a lista de livros do serviço, utilizando o mock como fallback em caso de erro
     this.books$ = this.bookService.getBooks().pipe(
       catchError((error) => {
         this.errorMessage = error.message;

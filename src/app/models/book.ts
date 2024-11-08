@@ -1,5 +1,5 @@
 export interface IBook {
     title: string,
     author: string,
-    publishDate: any,
+    publishDate: string,
 }
