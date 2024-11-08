@@ -11,6 +11,8 @@ export class BookService {
     { title: 'Livro 1', author: 'Autor 1', publishDate: '2022-01-01' },
     { title: 'Livro 2', author: 'Autor 2', publishDate: '2021-12-10' },
   ];
+  // link metodo get da api de livros
+  // private apiUrl = 'https://restful-booker.herokuapp.com/booking';
 
   // BehaviorSubject para controlar a lista de livros
   private booksSubject = new BehaviorSubject<IBook[]>(this.booksMocks);
